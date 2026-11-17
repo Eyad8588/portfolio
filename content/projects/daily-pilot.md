@@ -5,7 +5,7 @@ tagline: A local-AI daily assistant — Telegram news digest, wake-up actions an
 order: 2
 status: In progress
 tags: [Agents, Automation, Telegram, Gmail API, Local LLM]
-github: "TODO: https://github.com/<eyad>/daily-pilot"
+github: https://github.com/Eyad8588/daily-pilot
 image: ""
 video: ""
 ---

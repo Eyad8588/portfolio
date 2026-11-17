@@ -51,6 +51,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="footer">
           <div className="wrap">
             © {new Date().getFullYear()} {profile.name} · Built with Next.js · The chat runs a local model in your browser.
+            {profile.sourceCode && (
+              <>
+                {" · "}
+                <a href={profile.sourceCode} target="_blank" rel="noreferrer">
+                  Source
+                </a>
+              </>
+            )}
           </div>
         </footer>
         <Chat />

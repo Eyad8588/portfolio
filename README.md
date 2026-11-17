@@ -1,11 +1,27 @@
 # Eyad — AI Developer (portfolio)
 
-A fast, static Next.js portfolio with an **"Ask what Eyad can do" chat that runs entirely in the visitor's browser** — no server, no API keys, nothing sent anywhere.
+A fast, static Next.js portfolio with an **"Ask what Eyad can do" AI chat that runs entirely in the visitor's browser**: no server, no API keys, and nothing is sent anywhere.
 
-- Hero, About, Tech stack, Projects (cards + a detail page per project), Contact
-- Dark / light theme (follows the OS, remembers the visitor's choice), responsive, no web fonts
-- Room for LiveMock 3D videos on every project card and page
-- All personal content lives in [`content/`](content/) — edit Markdown/JSON, rebuild, done
+## Features
+
+- **In-browser AI chat:** retrieval over the portfolio content (embeddings precomputed at build time) plus Qwen2.5 0.5B/1.5B running on WebGPU through WebLLM. The model loads lazily with a progress bar and falls back to search answers on devices without WebGPU. Sections that haven't been filled in get "not on this site yet" answers instead of guesses.
+- **Pages:** hero, about, tech stack, project cards with a detail page per project, contact.
+- **Theme:** dark and light, following the OS and remembering the visitor's choice. Responsive, no web fonts, static export.
+- **Media:** room for LiveMock 3D videos on every project card and page.
+- **Content:** everything personal lives in [`content/`](content/). Edit Markdown/JSON and rebuild.
+
+## Tech stack
+
+Next.js 16 (static export) · React 19 · TypeScript · plain CSS (design tokens) · [WebLLM](https://github.com/mlc-ai/web-llm) (Qwen2.5-Instruct, WebGPU) · [transformers.js](https://github.com/huggingface/transformers.js) (all-MiniLM-L6-v2 embeddings, WASM) · gray-matter + marked · GitHub Actions → GitHub Pages
+
+## Screenshots
+
+<!-- TODO: add screenshots to docs/screenshots/ and link them here -->
+- TODO: home page (dark)
+- TODO: home page (light)
+- TODO: project detail page
+- TODO: chat answering a question (AI mode)
+- TODO: mobile view
 
 ## Quick start
 
@@ -97,7 +113,7 @@ Import the repo in Vercel — framework preset **Next.js**, defaults are fine (`
 ### GitHub Pages
 1. Settings → Pages → Source: **GitHub Actions**.
 2. Add `.github/workflows/pages.yml` (already in this repo). It builds with `NEXT_PUBLIC_BASE_PATH=/<repo-name>` so links work under `https://<user>.github.io/<repo-name>/`. For a `<user>.github.io` repo, delete that env line.
-3. Push to `main`.
+3. Push to `main`. (GitHub Pages on a **private** repo needs a paid GitHub plan; make the repo public or use Vercel.)
 
 Any static host works: upload `out/`. WebGPU needs HTTPS (or localhost).
 

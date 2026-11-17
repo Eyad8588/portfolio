@@ -5,7 +5,7 @@ tagline: A security scanner for AI skills, MCP servers, agents and model files.
 order: 3
 status: In progress
 tags: [AI security, MCP, Prompt injection, SARIF, Python]
-github: "TODO: https://github.com/<eyad>/agent-shield"
+github: https://github.com/Eyad8588/agent-shield
 image: ""
 video: ""
 ---

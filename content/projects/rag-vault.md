@@ -5,7 +5,7 @@ tagline: Permission-aware RAG with citations, a knowledge graph and a PyTorch cl
 order: 1
 status: In progress
 tags: [RAG, PyTorch, LanceDB, Knowledge graph, FastAPI, Next.js]
-github: "TODO: https://github.com/<eyad>/rag-vault"
+github: https://github.com/Eyad8588/rag-vault
 image: ""
 video: ""
 ---

@@ -11,9 +11,10 @@
   "cv": "",
   "_cv": "TODO: put the CV PDF in public/eyad-cv.pdf and set cv to '/eyad-cv.pdf'. Empty = button hidden.",
   "links": {
-    "github": "TODO: https://github.com/<eyad-username>",
+    "github": "https://github.com/Eyad8588",
     "linkedin": "TODO: https://www.linkedin.com/in/<eyad>",
     "email": "TODO: eyad@example.com",
     "x": ""
-  }
+  },
+  "sourceCode": "https://github.com/Eyad8588/portfolio"
 }

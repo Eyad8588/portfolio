@@ -10,3 +10,11 @@ next-env.d.ts
 
 # graft search hint file (local tooling)
 /.ignore
+
+# secrets and model weights (never commit)
+.env*
+*.gguf
+*.safetensors
+*.bin
+*.onnx
+*.mlpackage

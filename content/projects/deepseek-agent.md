@@ -5,7 +5,7 @@ tagline: A coding / task agent on the DeepSeek harness, running a local DeepSeek
 order: 5
 status: Research
 tags: [Agents, DeepSeek, Local LLM, Evaluation]
-github: "TODO: https://github.com/<eyad>/deepseek-agent"
+github: https://github.com/Eyad8588/deepseek-agent
 image: ""
 video: ""
 ---

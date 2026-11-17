@@ -21,6 +21,7 @@ export type Profile = {
   availability: string;
   photo: string;
   cv: string;
+  sourceCode?: string;
   links: { github: string; linkedin: string; email: string; x: string };
 };
 
