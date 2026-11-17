@@ -1,0 +1,7 @@
+[
+  { "group": "AI & ML", "items": ["Python", "PyTorch", "RAG", "Embeddings & vector search", "Text classification", "Knowledge graphs"] },
+  { "group": "LLM inference", "items": ["Ollama", "llama.cpp", "MLX", "KV cache", "WebLLM / WebGPU", "transformers.js"] },
+  { "group": "Agents & security", "items": ["AI agents", "MCP (Model Context Protocol)", "Prompt-injection testing", "AI supply-chain security", "SARIF"] },
+  { "group": "Backend & data", "items": ["FastAPI", "LanceDB", "SQLite", "NetworkX", "uv"] },
+  { "group": "Web & apps", "items": ["TypeScript", "Next.js", "React", "React Native / Expo", "Electron", "Three.js", "Firebase"] }
+]

@@ -1,0 +1,29 @@
+{
+  "name": "eyad-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "embed": "node scripts/build-index.mjs",
+    "dev": "npm run embed && next dev --webpack",
+    "build": "npm run embed && next build --webpack",
+    "start": "npx serve out -l 3000",
+    "build:keyword-only": "node scripts/build-index.mjs --no-embeddings && next build --webpack",
+    "fetch-llm-libs": "node scripts/fetch-webllm-libs.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
+    "@mlc-ai/web-llm": "^0.2.89",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.2.1",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
