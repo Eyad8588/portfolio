@@ -113,7 +113,7 @@ Import the repo in Vercel — framework preset **Next.js**, defaults are fine (`
 ### GitHub Pages
 1. Settings → Pages → Source: **GitHub Actions**.
 2. Add `.github/workflows/pages.yml` (already in this repo). It builds with `NEXT_PUBLIC_BASE_PATH=/<repo-name>` so links work under `https://<user>.github.io/<repo-name>/`. For a `<user>.github.io` repo, delete that env line.
-3. Push to `main`. (GitHub Pages on a **private** repo needs a paid GitHub plan; make the repo public or use Vercel.)
+3. Push to `main`.
 
 Any static host works: upload `out/`. WebGPU needs HTTPS (or localhost).
 

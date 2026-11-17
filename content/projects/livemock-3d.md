@@ -5,7 +5,7 @@ tagline: Put any screen onto a 3D device, animate it cinematically and export a 
 order: 6
 status: Working app
 tags: [Three.js, Electron, TypeScript, 3D, Video export]
-github: "TODO: https://github.com/<eyad>/livemock-3d"
+github: https://github.com/Eyad8588/livemock-3d
 image: /media/livemock-final-both.jpg
 gallery: [/media/livemock-final-both.jpg, /media/livemock-smoke-glb-iphone.jpg, /media/livemock-smoke-glb-macbook.jpg, /media/livemock-final-red.jpg]
 video: ""
