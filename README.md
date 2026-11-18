@@ -2,6 +2,16 @@
 
 A fast, static Next.js portfolio with an **"Ask what Eyad can do" AI chat that runs entirely in the visitor's browser**: no server, no API keys, and nothing is sent anywhere.
 
+## What it does (in simple words)
+
+This is Eyad's personal website. It shows who Eyad is, the tools Eyad works with, and seven projects, each with its own page, results and a link to the code. It also has a small chat window where visitors can ask questions like "What can Eyad do?" and get an answer. The AI behind the chat runs inside the visitor's own browser, so no question ever leaves their computer.
+
+How the chat answers a question, in 3 steps:
+
+1. **Before the site goes live**, a build script cuts the site's text into small pieces and turns each piece into a list of numbers (an "embedding") that captures its meaning.
+2. **When a visitor asks something**, the browser turns the question into numbers the same way and picks the pieces of text that match it best (by meaning and by keywords).
+3. **A small AI model running in the browser** (Qwen2.5 via WebGPU) writes a short answer using only those pieces and links to its sources. If the device can't run the model, the chat shows the matching passages instead, and if the site doesn't contain the answer, it says so rather than guessing.
+
 ## Features
 
 - **In-browser AI chat:** retrieval over the portfolio content (embeddings precomputed at build time) plus Qwen2.5 0.5B/1.5B running on WebGPU through WebLLM. The model loads lazily with a progress bar and falls back to search answers on devices without WebGPU. Sections that haven't been filled in get "not on this site yet" answers instead of guesses.
@@ -16,12 +26,25 @@ Next.js 16 (static export) · React 19 · TypeScript · plain CSS (design tokens
 
 ## Screenshots
 
-<!-- TODO: add screenshots to docs/screenshots/ and link them here -->
-- TODO: home page (dark)
-- TODO: home page (light)
-- TODO: project detail page
-- TODO: chat answering a question (AI mode)
-- TODO: mobile view
+**Home / hero:** the first thing a visitor sees, with a short intro and buttons to the projects and the chat.
+
+![Home page](docs/screenshots/home.png)
+
+**Projects grid:** one card per project with its status, a one-line summary and tags. Click a card to open its page.
+
+![Projects grid](docs/screenshots/projects.png)
+
+**Project detail page:** KV Lab's page with its headline result, tags, a GitHub link and an "Ask the AI" button.
+
+![Project detail page](docs/screenshots/project-detail.png)
+
+**AI chat:** the in-browser chat answering "What can Eyad do?", with links to the sources it used.
+
+![Chat answering a question](docs/screenshots/chat.png)
+
+**Mobile view:** the same site on a phone-sized screen.
+
+<img src="docs/screenshots/mobile.png" alt="Mobile view" width="320">
 
 ## Quick start
 

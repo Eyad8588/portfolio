@@ -43,4 +43,6 @@ Next.js app with login by role, upload, chat with citations, an admin panel, the
 
 ## Results
 
-TODO: classifier accuracy/F1 table, retrieval quality, screenshots or a LiveMock 3D video.
+- Topic classifier on AG News (4 classes): MLP on frozen `qwen3-embedding:0.6b` vectors reaches **0.888 macro-F1** vs 0.880 for TF-IDF and 0.895 for a fine-tuned BERT-mini — 99% of the fine-tuned F1 while reusing the retrieval embeddings.
+- Sensitivity classifier (unseen templates): **0.72 macro-F1** vs 0.59 for TF-IDF, with **100% recall on confidential documents**.
+- Full report: [rag-vault README](https://github.com/Eyad8588/rag-vault#results).

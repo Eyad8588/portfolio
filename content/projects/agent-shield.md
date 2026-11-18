@@ -1,7 +1,7 @@
 ---
 slug: agent-shield
 title: Agent Shield
-tagline: A security scanner for AI skills, MCP servers, agents and model files.
+tagline: A security scanner for AI skills, MCP servers, agents and model files — 100% precision and recall on its test corpus.
 order: 3
 status: In progress
 tags: [AI security, MCP, Prompt injection, SARIF, Python]
@@ -31,4 +31,7 @@ The scanner is tested on a set of deliberately malicious sample skills and MCP s
 
 ## Results
 
-TODO: precision/recall table, example HTML report screenshot.
+- On 29 malicious and 13 clean samples: static rules alone reach **0.94 precision / 1.00 recall**; with the local `qwen3.5:4b` judge, **1.00 / 1.00** (the judge clears the 2 false positives).
+- Judge hardening: with hardening off, the judge downgraded 3 of 30 real malicious findings; with it on, **0 of 30**.
+- Runtime harness: a `qwen3.5:4b` agent was compromised by 1 of 8 injection cases.
+- Full tables: [agent-shield README](https://github.com/Eyad8588/agent-shield#evaluation).

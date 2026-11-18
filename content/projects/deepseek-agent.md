@@ -22,4 +22,6 @@ An agent built on the DeepSeek agent harness, running a local DeepSeek model (a 
 
 ## Results
 
-TODO: task-set success rate vs baseline, speed, Agent Shield findings.
+- With `qwen3.5:9b` on 10 tasks: the DeepSeek Harness agent and a plain tool-calling loop both pass **10/10**; Harness takes about 1.9× the baseline's median time (79.7 s vs 42.5 s per task).
+- Harness runs fully offline against Ollama, and its full-access shell is removed with a two-line patch.
+- Full tables: [deepseek-agent README](https://github.com/Eyad8588/deepseek-agent#results).

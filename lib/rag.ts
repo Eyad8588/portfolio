@@ -89,8 +89,16 @@ export function loadEmbedder(modelId: string, onProgress?: (pct: number) => void
 
 export type Hit = Chunk & { score: number };
 
+// "What can Eyad do?" is almost all stop words once the name is removed, so retrieval finds
+// nothing. Expand capability-style questions with words that match the skills sections.
+const CAPABILITY = /\b(what (can|does|do)\b.*\bdo\b|skills?|capabilit|good at|expertise|speciali[sz]|services|tech ?stack|technolog|what .* (build|work on))/i;
+export const expandQuery = (q: string) =>
+  CAPABILITY.test(q) ? `${q} — skills, capabilities, what Eyad can do and builds, tech stack` : q;
+
 export async function search(query: string, opts: { semantic: boolean; k?: number }): Promise<Hit[]> {
   const index = await loadIndex();
+  const capability = CAPABILITY.test(query);
+  query = expandQuery(query);
   const k = opts.k ?? 4;
   const kw = bm25(index, query);
   const kwMax = Math.max(...kw, 1e-9);
@@ -120,6 +128,8 @@ export async function search(query: string, opts: { semantic: boolean; k?: numbe
     return { ...c, score: s + (named.has(c.title) ? 0.15 : 0) };
   });
   return scored
+    // capability questions are answered by the skills/projects text, never by an unfilled section
+    .filter((h) => !(capability && h.kind === "missing"))
     .sort((a, b) => b.score - a.score)
     .filter((h) => h.score > (sem ? 0.2 : 0.05))
     .slice(0, k);

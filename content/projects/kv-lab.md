@@ -1,7 +1,7 @@
 ---
 slug: kv-lab
 title: KV Lab
-tagline: Experiments on saving and transferring the LLM KV cache on Apple Silicon.
+tagline: "Save an LLM's KV cache and restore it in a new process — up to 207× faster time to first token on a MacBook."
 order: 4
 status: In progress
 tags: [LLM inference, KV cache, llama.cpp, MLX, Benchmarks]
@@ -27,4 +27,7 @@ Time to first token, memory, cache file size, and output equality between cached
 
 ## Results
 
-TODO: TTFT speed-up chart, file sizes, equality check results.
+- Restoring a saved KV cache instead of recomputing the prompt: **22× faster first token at 4k tokens, 90× at 16k and 207× at 32k** (llama.cpp, Qwen2.5-0.5B). MLX reaches 72× at 32k.
+- Restoring is cheap: a 384 MiB cache loads in 48 ms; a 1.8 GiB MLX cache in 0.57 s.
+- Correctness: the restored cache gave the same greedy output as the in-memory cache in **51/51** runs.
+- Full tables: [kv-lab README](https://github.com/Eyad8588/kv-lab#results).
