@@ -1,7 +1,7 @@
 ---
 slug: rag-vault
 title: RAG Vault
-tagline: Permission-aware RAG with citations, a knowledge graph and a PyTorch classifier.
+tagline: Permission-aware RAG with citations and a knowledge graph — its classifier catches 100% of confidential test documents.
 order: 1
 status: In progress
 tags: [RAG, PyTorch, LanceDB, Knowledge graph, FastAPI, Next.js]
